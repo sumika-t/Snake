@@ -11,7 +11,7 @@ public class Score : MonoBehaviour {
     public GUIText highScoreGUIText;
 
     //スコア
-    private int score;
+    public static int score;
 
     //ハイスコア
     private int highScore;
@@ -38,7 +38,7 @@ public class Score : MonoBehaviour {
 	}
 
     //ゲーム開始前の状態に戻す
-    private void Initialize()
+    public void Initialize()
     {
         //スコアを0に戻す
         score = 0;
@@ -59,8 +59,5 @@ public class Score : MonoBehaviour {
         //ハイスコアを保存する
         PlayerPrefs.SetInt(highScoreKey, highScore);
         PlayerPrefs.Save();
-
-        //ゲーム開始前の状態に戻す
-        Initialize();
     }
 }
